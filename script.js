@@ -23,3 +23,11 @@ let sum = 0;
 for(let i = 0; i < b; i++) {
 sum = sum + a
 }
+
+function multiply2(a, b){
+    let sum = 0
+    for(let i = 0; i < b; i++) {
+        sum = sum + a
+    }
+        return sum
+}
