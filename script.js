@@ -1,33 +1,21 @@
-function add(a, b){
-    if(typeof a !== 'number' || typeof b !== 'number') {
-        return NaN
-    }
-        return a + b
-}
+const carElement = document.createElement('div');
+const body = document.querySelector('body');
+let position = 0;
 
-function multiply(a, b){
-    if(typeof a !== 'number' || typeof b !== 'number') {
-        return NaN
-    }
-        return a * b
-}
+carElement.className = 'car-game__car-element';
 
-function square(a){    
-        return multiply(a,a);
-}
+carElement.style.width = '100px';
+carElement.style.height = '100px';
+carElement.style.backgroundColor = 'red';
+carElement.style.position = 'absolute';
+carElement.style.left = '0px';
 
-const a = 5
-const b = 4
-let sum = 0;
+body.appendChild(carElement);
 
-for(let i = 0; i < b; i++) {
-sum = sum + a
-}
-
-function multiply2(a, b){
-    let sum = 0
-    for(let i = 0; i < b; i++) {
-        sum = sum + a
-    }
-        return sum
-}
+setInterval(
+    function(){
+        position = position + 10;
+        carElement.style.left = position + 'px';
+    },
+    1000
+)
