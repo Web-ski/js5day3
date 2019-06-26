@@ -1,7 +1,7 @@
 const carElement = document.createElement('div');
 const body = document.querySelector('body');
-const tickDuration = 100;
-const displacementPerTick = 10;
+const tickDuration = 10;
+const velocity = 100;
 let position = 0;
 
 function applyStylesToCar() {
@@ -17,6 +17,7 @@ function applyStylesToCar() {
 }
 
 function moveCar() {
+    const displacementPerTick = velocity * (tickDuration / 1000);
     position = position + displacementPerTick;
     carElement.style.left = position + 'px';
 }
