@@ -1,5 +1,7 @@
+
+const containerElement = document.querySelector('body');
+const roadElement = document.createElement('div');
 const carElement = document.createElement('div');
-const body = document.querySelector('body');
 const tickDuration = 10;
 const maxAcceleration = 10;
 
@@ -7,16 +9,24 @@ let position = 0;
 let acceleration = 0;
 let velocity = 0;
 
-function applyStylesToCar() {
+function applyStylesToCarAndRoad() {
     carElement.className = 'car-game__car-element';
 
     carElement.style.width = '100px';
     carElement.style.height = '100px';
-    carElement.style.backgroundColor = 'red';
+    carElement.style.backgroundColor = 'yellow';
     carElement.style.position = 'absolute';
     carElement.style.left = position + 'px';
 
-    body.appendChild(carElement);
+    //carElement.style.borderRadius = '50%';
+
+    roadElement.style.width = '100%';
+    roadElement.style.height = '100px';
+    roadElement.style.position = 'relative';
+    roadElement.style.backgroundColor = 'grey';
+
+    roadElement.appendChild(carElement);
+    containerElement.appendChild(roadElement);
 }
 
 function moveCar() {
@@ -28,7 +38,7 @@ function moveCar() {
     carElement.style.left = position + 'px';
 }
 
-applyStylesToCar();
+applyStylesToCarAndRoad();
 
 const intervalId = setInterval(
     moveCar,
